@@ -1,0 +1,6 @@
+com\example\SpringSql\Student\StudentService.class
+com\example\SpringSql\Student\StudentController.class
+com\example\SpringSql\Student\StudentRepository.class
+com\example\SpringSql\SpringApp.class
+com\example\SpringSql\Student\Student.class
+com\example\SpringSql\Student\StudentConfig.class
