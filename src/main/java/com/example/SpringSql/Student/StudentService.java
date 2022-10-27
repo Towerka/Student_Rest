@@ -24,6 +24,14 @@ public class StudentService {
         return studentRepository.findAll();
     }
 
+    @GetMapping
+    public Student getStudent(Long id){
+        Student student = studentRepository.findById(id).orElseThrow(()-> new IllegalStateException(
+                "student with id " + id + " doesn't exists"
+        ));
+        return student;
+    }
+
     public void addNewStudent(Student student) {
         Optional<Student> studentOptional = studentRepository.findStudentByEmail(student.getEmail());
         if(studentOptional.isPresent()){

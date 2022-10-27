@@ -12,8 +12,8 @@ import java.util.List;
 public class StudentConfig {
 
     @Bean
-    CommandLineRunner commandLineRunner(){
-        return args ->{
+    CommandLineRunner commandLineRunner() {
+        return args -> {
             System.out.println("Server started!");
         };
     }
