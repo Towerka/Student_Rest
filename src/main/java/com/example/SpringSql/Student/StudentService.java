@@ -25,9 +25,17 @@ public class StudentService {
     }
 
     @GetMapping
-    public Student getStudent(Long id){
+    public Student getStudentById(Long id){
         Student student = studentRepository.findById(id).orElseThrow(()-> new IllegalStateException(
                 "student with id " + id + " doesn't exists"
+        ));
+        return student;
+    }
+
+    @GetMapping
+    public Student getStudentByEmail(String email){
+        Student student = studentRepository.findStudentByEmail(email).orElseThrow(()-> new IllegalStateException(
+                "student with email " + email + " doesn't exists"
         ));
         return student;
     }

@@ -17,10 +17,16 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    @GetMapping(path = "{studentId}")
-    public Student getStudent(@PathVariable("studentId") Long id){
-        return studentService.getStudent(id);
+    @GetMapping(path = "/getStudentById")
+    public Student getStudentById(@RequestParam(value = "id") Long id){
+        return studentService.getStudentById(id);
     }
+
+    @GetMapping(path = "/getStudentByEmail")
+    public Student getStudentByEmail(@RequestParam(value = "email") String email){
+        return studentService.getStudentByEmail(email);
+    }
+
     @GetMapping
     public List<Student> getStudents(){
         return studentService.getStudents();
